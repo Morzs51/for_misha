@@ -34,38 +34,3 @@ def run_test():
     depth_frame = test.get_depth_frame(frame)
     cv2.imshow("кадр глубины", depth_frame)
     cv2.waitKey(0)
-
-
-
-# Путь к папке с изображениями
-image_folder = "C:\\Users\\serzh\\PycharmProjects\\pythonProject\\rgb"
-
-import os
-
-# Путь к папке с изображениями
-image_folder = "C:\\Users\\serzh\\PycharmProjects\\pythonProject\\rgb"
-
-# Получаем список файлов в папке
-image_files = os.listdir(image_folder)
-
-# Цикл по всем файлам в папке
-for image_file in image_files:
-    if image_file.endswith('.jpg') or image_file.endswith('.png'):  # Укажите нужное расширение файла
-        old_path = os.path.join(image_folder, image_file)
-
-        # Создаем новое имя файла (без расширения)
-        new_name = 0  # Задайте новое имя файла
-
-        # Получаем расширение файла
-        file_extension = os.path.splitext(image_file)[1]
-
-        # Создаем новый путь к файлу с новым именем и старым расширением
-        new_name = str(new_name)
-        new_path = os.path.join(image_folder, new_name + file_extension)
-        new_name = int(new_name)
-        new_name +=1
-        # Переименовываем файл
-        os.rename(old_path, new_path)
-
-# Теперь все изображения в папке переименованы без части старого имени
-
